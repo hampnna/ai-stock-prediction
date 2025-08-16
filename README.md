@@ -1,43 +1,94 @@
-# Stock Price Prediction Using Machine Learning and Deep Learning: A CNN-LSTM Based Approach
+# 🤖 AI-Powered Stock Prediction System
 
-This project uses CNN-LSTM hybrid models to predict stock prices. It includes feature engineering, technical indicators (SMA, RSI, MACD), and evaluation using RMSE and R² score.
+A comprehensive machine learning system that predicts stock price movements using multiple data sources and advanced AI techniques.
 
-## Features
-- Real-time data with Yahoo Finance API
-- Deep learning: CNN for feature extraction, LSTM for sequence prediction
-- Comparison with traditional ML models like SVM and XGBoost
+## ✨ Features
+
+- **📊 Multi-Source Data Fusion**: Historical prices + News sentiment + Social media sentiment
+- **🧠 Advanced AI Models**: XGBoost classifier with FinBERT and VADER sentiment analysis
+- **📈 Interactive Dashboard**: Real-time Streamlit web application with Plotly charts
+- **🔍 Model Explainability**: SHAP values for feature importance analysis
+- **💰 Backtesting Framework**: Realistic performance testing with transaction costs
+
+## 🛠️ Tech Stack
+
+- **Python 3.12**
+- **Machine Learning**: XGBoost, scikit-learn
+- **NLP**: FinBERT (Transformers), VADER Sentiment
+- **Data**: yfinance, pandas, numpy
+- **Visualization**: Streamlit, Plotly, matplotlib
+- **Explainability**: SHAP
+
+## 🚀 Quick Start
+
+1. **Clone the repository**
+git clone https://github.com/hampnna/ai-stock-prediction.git
+cd ai-stock-prediction
+
+2. **Create virtual environment**
+python -m venv venv
+venv\Scripts\activate # Windows
+
+3. **Install dependencies**
+pip install -r requirements.txt
+
+4. **Run the data pipeline**
+python src/data_ingest.py
+python src/preprocess.py
+python src/features.py
+python src/model.py
+python src/backtest.py
+
+5. **Launch dashboard**
+streamlit run src/app.py
 
 
-## Models Used
-- Decision Tree (Scikit-learn)
-- LSTM (Keras)
-- CNN-LSTM (Keras)
+## 📊 Project Structure
 
-## Folder Structure
-```
-stock-price-prediction-ml-dl/
-├── dataset/
-│   └── stock_data.csv
-├── main.py
-├── lstm_model.py
-├── cnn_lstm_model.py
-├── decision_tree_model.py
-├── data_preprocessing.py
-├── utils.py
-├── requirements.txt
-└── README.md
-```
-## Techniques Used
-- Feature Engineering
-- CNN for spatial pattern learning
-- LSTM for temporal pattern detection
-- Hybrid CNN-LSTM model for high-accuracy forecasting
+stock-prediction-project/
+├── src/
+│ ├── data_ingest.py # Data collection from Yahoo Finance
+│ ├── preprocess.py # Technical indicators & sentiment analysis
+│ ├── features.py # Feature engineering & target creation
+│ ├── model.py # XGBoost training & validation
+│ ├── backtest.py # Strategy backtesting
+│ ├── explain.py # SHAP model explainability
+│ └── app.py # Streamlit dashboard
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
 
 
-## Results
-The hybrid CNN-LSTM model performed better than traditional ML models, showcasing lower RMSE and better temporal accuracy on test data.
+## 🎯 Key Results
 
-## Future Enhancements
-- Add sentiment analysis from news
-- Integrate technical indicators like RSI, MACD
-- Deploy using Streamlit or Flask UI''',
+- **Model Accuracy**: ~65-70% on next-day direction prediction
+- **Features**: 67 engineered features including technical indicators and sentiment scores
+- **Backtesting**: Includes realistic transaction costs (0.1%)
+- **Explainability**: SHAP analysis reveals most important prediction factors
+
+## 📈 Dashboard Features
+
+- **Real-time stock price charts** with AI prediction markers
+- **Technical analysis indicators** (RSI, MACD, Bollinger Bands)
+- **Sentiment analysis trends** from news and social media
+- **Portfolio performance comparison** (AI strategy vs buy-and-hold)
+- **Feature importance rankings** with SHAP values
+
+## 🔬 Model Details
+
+- **Algorithm**: XGBoost Gradient Boosting Classifier
+- **Features**: Price-based, technical indicators, sentiment scores
+- **Validation**: Time series cross-validation (5 folds)
+- **Target**: Binary classification (UP/DOWN next day movement)
+
+## 🤝 Contributing
+
+Feel free to open issues and pull requests!
+
+## 📄 License
+
+MIT License - feel free to use this code for learning and projects.
+
+---
+
+**Built with ❤️ by [hampanna]**
+
